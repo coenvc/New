@@ -1,0 +1,17 @@
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\bin\Debug\proost.exe
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\bin\Debug\proost.pdb
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.csprojResolveAssemblyReference.cache
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.Properties.Resources.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.csproj.GenerateResource.Cache
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.exe
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.pdb
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.Home.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.register.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.TequilaAchievement.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.Login.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.BierAchievement.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.WijnAchievement.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.WodkaAchievement.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.RumAchievement.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\bin\Debug\MySql.Data.dll
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\proost\obj\Debug\proost.Form1.resources

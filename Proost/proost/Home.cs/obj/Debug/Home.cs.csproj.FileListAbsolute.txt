@@ -1,0 +1,8 @@
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\bin\Debug\Home.cs.exe.config
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\obj\Debug\Home.cs.Properties.Resources.resources
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\obj\Debug\Home.cs.csproj.GenerateResource.Cache
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\bin\Debug\Home.cs.exe
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\bin\Debug\Home.cs.pdb
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\obj\Debug\Home.cs.exe
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\obj\Debug\Home.cs.pdb
+C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\proost\Home.cs\obj\Debug\Home.Home.resources
