@@ -25,6 +25,7 @@ namespace Kassa
             db.ingelogdeGebruikerww = tbWachtwoord.Text;
             if (db.Login(TbGebruikersNaam.Text, tbWachtwoord.Text) == true){
                 kassa kassaScherm = new kassa();
+                kassaScherm.SetDb(this.db);
                 this.Hide();
                 kassaScherm.Show();
             }
