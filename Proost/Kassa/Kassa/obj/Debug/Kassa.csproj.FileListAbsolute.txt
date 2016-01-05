@@ -28,3 +28,14 @@ C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\Kassa\Kassa\obj\Debug\
 C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\Kassa\Kassa\obj\Debug\Kassa.Properties.Resources.resources
 C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\Kassa\Kassa\obj\Debug\Kassa.csproj.GenerateResource.Cache
 C:\Users\Coen\Desktop\HBO ICT\Software engineering\Proost\Kassa\Kassa\obj\Debug\Kassa.Info.resources
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\bin\Debug\Kassa.exe.config
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.exe
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.pdb
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\bin\Debug\Kassa.exe
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\bin\Debug\Kassa.pdb
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.csprojResolveAssemblyReference.cache
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.Info.resources
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.kassa.resources
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.Login.resources
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.Properties.Resources.resources
+C:\Users\Coen\Documents\GitHub\Proost\Proost\Kassa\Kassa\obj\Debug\Kassa.csproj.GenerateResource.Cache

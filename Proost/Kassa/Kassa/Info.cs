@@ -14,11 +14,16 @@ namespace Kassa
     public partial class Info : Form
     {
        
-        Database db = new Database(); 
+        Database db; 
         public Info()
         {
             InitializeComponent();
             
+        }
+
+        public void SetDb(Database db)
+        {
+            this.db = db;
         }
 
         private void drankChart_Click(object sender, EventArgs e)
@@ -47,7 +52,7 @@ namespace Kassa
 
         private void btnTerug_Click(object sender, EventArgs e)
         {
-            kassa kassaScherm = new kassa();
+            kassa kassaScherm = new kassa(); 
             this.Close();
             kassaScherm.ShowDialog();
         }

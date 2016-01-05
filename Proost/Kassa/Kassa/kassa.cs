@@ -12,11 +12,16 @@ namespace Kassa
 {
     public partial class kassa : Form
     {
-        Database maakVerbinding = new Database();
+        Database db;
 
         public kassa()
         {
             InitializeComponent();
+        }
+
+        public void SetDb(Database db)
+        {
+            this.db = db;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -31,7 +36,7 @@ namespace Kassa
 
         private void BtnBier_Click(object sender, EventArgs e)
         {
-            maakVerbinding.AddBier(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
+            db.AddBier(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text)); 
             LbBestelling.Items.Add("Aantal Bier: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
             
             
@@ -39,25 +44,25 @@ namespace Kassa
 
         private void BtnWijn_Click(object sender, EventArgs e)
         {
-            maakVerbinding.AddWijn(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
+            db.AddWijn(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
             LbBestelling.Items.Add("Aantal Wijn: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
         }
 
         private void BtnRum_Click(object sender, EventArgs e)
         {
-            maakVerbinding.AddRum(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
+            db.AddRum(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
             LbBestelling.Items.Add("Aantal Rum: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
         }
 
         private void BtnVodka_Click(object sender, EventArgs e)
         {
-            maakVerbinding.AddWodka(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
+            db.AddWodka(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
             LbBestelling.Items.Add("Aantal Vodka: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
         }
 
         private void BtnTequila_Click(object sender, EventArgs e)
         {
-            maakVerbinding.AddTequila(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
+            db.AddTequila(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
             LbBestelling.Items.Add("Aantal Tequila: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
         }
 
@@ -71,6 +76,7 @@ namespace Kassa
         private void button6_Click(object sender, EventArgs e)
         {
             Info erp = new Info();
+            erp.SetDb(this.db);
             this.Hide();
             erp.Show(); 
         }
