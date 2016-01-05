@@ -12,7 +12,7 @@ namespace Kassa
 {
     public partial class Login : Form
     {
-        
+        Database db = new Database();
         public Login()
         {
             InitializeComponent();
@@ -20,10 +20,10 @@ namespace Kassa
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Database db = new Database();
+            
+            db.ingelogdeGebruikerNaam = TbGebruikersNaam.Text;
+            db.ingelogdeGebruikerww = tbWachtwoord.Text;
             if (db.Login(TbGebruikersNaam.Text, tbWachtwoord.Text) == true){
-                db.ingelogdeGebruikerNaam = TbGebruikersNaam.Text;
-                db.ingelogdeGebruikerww = tbWachtwoord.Text; 
                 kassa kassaScherm = new kassa();
                 this.Hide();
                 kassaScherm.Show();
