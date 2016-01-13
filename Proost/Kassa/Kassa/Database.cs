@@ -18,11 +18,21 @@ namespace Kassa
         public int AantalWijnVerkocht { get; private set; }
         public int AantalBierVerkocht;
         public int AantalWodkaVerkocht { get; private set; }
+        public int B5 { get; private set; }
+        public int B10 { get; private set; }
+        public int B25 { get; private set; }
+        public int B50 { get; private set; }
         public int AantalRumVerkocht { get; private set; }
         public int AantalTequilaVerkocht { get; private set; }
         public string datum1;
-        public string datum2; 
-
+        public string datum2;
+        public int AantalBier;
+        public int Barcode;
+        public int Bier;
+        public int Wijn;
+        public int Wodka;
+        public int Rum;
+        public int Tequila;
 
         //Constructor
         public Database()
@@ -45,10 +55,10 @@ namespace Kassa
         {
             try
             {
-               if (connection.State == System.Data.ConnectionState.Closed)
-               {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                {
                     connection.Open();
-               }
+                }
                 return true;
             }
             catch (MySqlException ex)
@@ -87,7 +97,7 @@ namespace Kassa
                 return false;
             }
         }
-       
+
 
         public void AddBier(int bier, int barcode)
         {
@@ -146,14 +156,14 @@ namespace Kassa
                 string query = "SELECT sum(Bier) FROM bestelling WHERE CafeId = (SELECT CafeID FROM cafes WHERE CafeNaam = ?gebruikersnaam and CafeWachtwoord = ?wachtwoord) ";
 
                 //create command and assign the query and connection from the constructor
-                
+
                 MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 cmd.Parameters.Add("?gebruikersnaam", MySqlDbType.VarChar).Value = ingelogdeGebruikerNaam;
                 cmd.Parameters.Add("?wachtwoord", MySqlDbType.VarChar).Value = ingelogdeGebruikerww;
                 cmd.Parameters.Add("?datum1", MySqlDbType.Timestamp).Value = datum1;
-                cmd.Parameters.Add("?datum2", MySqlDbType.Timestamp).Value = datum2;  
-                MySqlDataReader DataReader = cmd.ExecuteReader();  
+                cmd.Parameters.Add("?datum2", MySqlDbType.Timestamp).Value = datum2;
+                MySqlDataReader DataReader = cmd.ExecuteReader();
                 while (DataReader.Read())
                 {
                     AantalBierVerkocht = (Convert.ToInt32(DataReader["sum(Bier)"]));
@@ -162,13 +172,13 @@ namespace Kassa
                 //Execute command
                 cmd.ExecuteNonQuery();
 
-               
+
 
                 //close connection
                 this.CloseConnection();
             }
 
-            return AantalBierVerkocht; 
+            return AantalBierVerkocht;
         }
         public int GetWijn()
         {
@@ -392,10 +402,10 @@ namespace Kassa
                 while (DataReader.Read())
                 {
                     count = count + 1;
-                    
+
 
                 }
-                DataReader.Close(); 
+                DataReader.Close();
 
                 if (count == 1)
                 {
@@ -408,15 +418,92 @@ namespace Kassa
                     return false;
 
                 }
-                
+
 
                 this.CloseConnection();
             }
             return false;
         }
-      
+        public void Achievement()
+        {
+            if (this.OpenConnection() == true)
+            {
+                //string query = "INSERT INTO users (UserID, Wachtwoord, UserNaam) values('"+barcode+"', '"+wachtwoord+"' , '"+gebruikersnaam+"')"; 
+                string query = "SELECT B5, B10, B25, B50  FROM users WHERE UserID = 567  ";
 
+                //create command and assign the query and connection from the constructor
 
-        } 
-       
-    }
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.Add("?gebruikersnaam", MySqlDbType.VarChar).Value = ingelogdeGebruikerNaam;
+                cmd.Parameters.Add("?wachtwoord", MySqlDbType.VarChar).Value = ingelogdeGebruikerww;
+                cmd.Parameters.Add("?datum1", MySqlDbType.Timestamp).Value = datum1;
+                cmd.Parameters.Add("?datum2", MySqlDbType.Timestamp).Value = datum2;
+                MySqlDataReader DataReader = cmd.ExecuteReader();
+                while (DataReader.Read())
+                {
+                    B5 = (Convert.ToInt32(DataReader["B5"]));
+                    B10 = (Convert.ToInt32(DataReader["B10"]));
+                    B25 = (Convert.ToInt32(DataReader["B25"]));
+                    B50 = (Convert.ToInt32(DataReader["B50"]));
+
+                }
+                DataReader.Close();
+            }
+            if (this.OpenConnection() == true)
+            {
+                //string query = "INSERT INTO users (UserID, Wachtwoord, UserNaam) values('"+barcode+"', '"+wachtwoord+"' , '"+gebruikersnaam+"')"; 
+                string query = "SELECT sum(Bier),sum(Wijn),sum(Tequila),sum(Wodka),sum(Rum) FROM bestelling WHERE UserID = ?barcode ";
+
+                //create command and assign the query and connection from the constructor
+
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
+                MySqlDataReader DataReader = cmd.ExecuteReader();
+                while (DataReader.Read())
+                {
+                    Bier = (Convert.ToInt32(DataReader["sum(Bier)"]));
+                    Wijn = (Convert.ToInt32(DataReader["sum(Wijn)"]));
+                    Wodka = (Convert.ToInt32(DataReader["sum(Wodka)"]));
+                    Tequila = (Convert.ToInt32(DataReader["sum(Tequila)"]));
+                    Rum = (Convert.ToInt32(DataReader["sum(Rum)"]));
+
+                }
+                DataReader.Close();
+            }
+        }
+
+            public void ControleerAchievement()
+        {
+           
+                //close connection
+                this.CloseConnection();
+                if (this.OpenConnection() == true)
+                 {
+                string query = "SELECT * FROM users";
+                if (B5 == 0 && Bier >= 5)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `B5` = '1' WHERE `users`.`UserID` = ?barcode;"; 
+                }
+                if (B10 == 0 && Bier >= 10)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B25 == 0 && Bier >= 25)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1', `B25` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B50 == 0 && Bier >= 50)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1', `B25` = '1', `B50` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }          
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
+                cmd.ExecuteNonQuery();
+                
+               
+            }
+        }
+        }
+    } 
+     

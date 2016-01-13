@@ -12,10 +12,14 @@ namespace proost
 {
     public partial class BierAchievement : Form
     {
-        DbConnection database = new DbConnection();  
-        
-               
-            public BierAchievement()
+        DbConnection database;
+
+        public void SetDb(DbConnection database)
+        {
+            this.database = database;
+        } 
+
+        public BierAchievement()
         {
             InitializeComponent();
             System.Windows.Forms.ToolTip ToolTipBier5 = new System.Windows.Forms.ToolTip();
@@ -26,8 +30,9 @@ namespace proost
             ToolTipBier10.SetToolTip(btnBier10, "0/10 behaald");
             ToolTipBier25.SetToolTip(btnBier25, "0/25 behaald");
             ToolTipBier50.SetToolTip(btnBier50, "0/50 behaald");
-            database.Select();
-        }
+           
+        } 
+
                 
         private void btnBier10_Click(object sender, EventArgs e)
         {

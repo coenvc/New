@@ -12,6 +12,12 @@ namespace proost
 {
     public partial class TequilaAchievement : Form
     {
+        DbConnection database;
+        public void SetDb(DbConnection database)
+        {
+            this.database = database;
+        } 
+
         public TequilaAchievement()
         {
             InitializeComponent();
