@@ -44,6 +44,8 @@ namespace Kassa
                 db.AddBier(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
                 LbBestelling.Items.Add("Aantal Bier: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
                 db.Barcode = Convert.ToInt32(TbBarcode.Text);
+                db.Achievement();
+                db.ControleerAchievementBier();
             }
             
 
@@ -59,6 +61,8 @@ namespace Kassa
                 db.AddWijn(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
                 LbBestelling.Items.Add("Aantal Wijn: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
                 db.Barcode = Convert.ToInt32(TbBarcode.Text);
+                db.Achievement();
+                db.ControleerAchievementWijn();
             }
             }
 
@@ -72,6 +76,8 @@ namespace Kassa
                 db.AddRum(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
                 LbBestelling.Items.Add("Aantal Rum: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
                 db.Barcode = Convert.ToInt32(TbBarcode.Text);
+                db.Achievement();
+                db.ControleerAchievementRum();
             }
             }
 
@@ -85,6 +91,8 @@ namespace Kassa
                 db.AddWodka(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
                 LbBestelling.Items.Add("Aantal Vodka: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
                 db.Barcode = Convert.ToInt32(TbBarcode.Text);
+                db.Achievement();
+                db.ControleerAchievementWodka();
             }
             }
 
@@ -98,6 +106,8 @@ namespace Kassa
                 db.AddTequila(Convert.ToInt32(NumAantal.Value), Convert.ToInt32(TbBarcode.Text));
                 LbBestelling.Items.Add("Aantal Tequila: " + Convert.ToString(NumAantal.Value) + "    " + "Barcode: " + TbBarcode.Text);
                 db.Barcode = Convert.ToInt32(TbBarcode.Text);
+                db.Achievement();
+                db.ControleerAchievementTequila();
             }
             }
 
@@ -124,7 +134,7 @@ namespace Kassa
             MessageBox.Show(Convert.ToString(db.B25));
             MessageBox.Show(Convert.ToString(db.B50));
             MessageBox.Show(Convert.ToString(db.Tequila));
-            db.ControleerAchievement();
+            
             
         }
     }

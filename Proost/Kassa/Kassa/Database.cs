@@ -22,6 +22,22 @@ namespace Kassa
         public int B10 { get; private set; }
         public int B25 { get; private set; }
         public int B50 { get; private set; }
+        public int W5 { get; private set; }
+        public int W10 { get; private set; }
+        public int W25 { get; private set; }
+        public int W50 { get; private set; }
+        public int T5 { get; private set; }
+        public int T10 { get; private set; }
+        public int T25 { get; private set; }
+        public int T50 { get; private set; }
+        public int R5 { get; private set; }
+        public int R10 { get; private set; }
+        public int R25 { get; private set; }
+        public int R50 { get; private set; }
+        public int WO5 { get; private set; }
+        public int WO10 { get; private set; }
+        public int WO25 { get; private set; }
+        public int WO50 { get; private set; }
         public int AantalRumVerkocht { get; private set; }
         public int AantalTequilaVerkocht { get; private set; }
         public string datum1;
@@ -429,7 +445,7 @@ namespace Kassa
             if (this.OpenConnection() == true)
             {
                 //string query = "INSERT INTO users (UserID, Wachtwoord, UserNaam) values('"+barcode+"', '"+wachtwoord+"' , '"+gebruikersnaam+"')"; 
-                string query = "SELECT B5, B10, B25, B50  FROM users WHERE UserID = 567  ";
+                string query = "SELECT B5, B10, B25, B50, W5,W10,W25,W50,WO5,WO10,WO25,WO50,T5,T10,T25,T50,R5,R10,R25,R50  FROM users WHERE UserID = 567  ";
 
                 //create command and assign the query and connection from the constructor
 
@@ -446,6 +462,25 @@ namespace Kassa
                     B10 = (Convert.ToInt32(DataReader["B10"]));
                     B25 = (Convert.ToInt32(DataReader["B25"]));
                     B50 = (Convert.ToInt32(DataReader["B50"]));
+                    W5 = (Convert.ToInt32(DataReader["W5"]));
+                    W10 = (Convert.ToInt32(DataReader["W10"]));
+                    W25 = (Convert.ToInt32(DataReader["W25"]));
+                    W50 = (Convert.ToInt32(DataReader["W50"]));
+                    WO5 = (Convert.ToInt32(DataReader["WO5"]));
+                    WO10 = (Convert.ToInt32(DataReader["WO10"]));
+                    WO25 = (Convert.ToInt32(DataReader["WO25"]));
+                    WO50 = (Convert.ToInt32(DataReader["WO50"]));
+                    T5 = (Convert.ToInt32(DataReader["T5"]));
+                    T10 = (Convert.ToInt32(DataReader["T10"]));
+                    T25 = (Convert.ToInt32(DataReader["T25"]));
+                    T50 = (Convert.ToInt32(DataReader["T50"]));
+                    R5 = (Convert.ToInt32(DataReader["R5"]));
+                    R10 = (Convert.ToInt32(DataReader["R10"]));
+                    R25 = (Convert.ToInt32(DataReader["R25"]));
+                    R50 = (Convert.ToInt32(DataReader["R50"]));
+
+
+
 
                 }
                 DataReader.Close();
@@ -473,17 +508,17 @@ namespace Kassa
             }
         }
 
-            public void ControleerAchievement()
+        public void ControleerAchievementBier()
         {
-           
-                //close connection
-                this.CloseConnection();
-                if (this.OpenConnection() == true)
-                 {
+
+            //close connection
+            this.CloseConnection();
+            if (this.OpenConnection() == true)
+            {
                 string query = "SELECT * FROM users";
                 if (B5 == 0 && Bier >= 5)
                 {
-                    query = "UPDATE `dbi339814`.`users` SET `B5` = '1' WHERE `users`.`UserID` = ?barcode;"; 
+                    query = "UPDATE `dbi339814`.`users` SET `B5` = '1' WHERE `users`.`UserID` = ?barcode;";
                 }
                 if (B10 == 0 && Bier >= 10)
                 {
@@ -496,14 +531,138 @@ namespace Kassa
                 if (B50 == 0 && Bier >= 50)
                 {
                     query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1', `B25` = '1', `B50` = '1' WHERE `users`.`UserID` = ?barcode;";
-                }          
+                }
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
                 cmd.ExecuteNonQuery();
-                
-               
+
+
             }
         }
+        public void ControleerAchievementWijn()
+        {
+
+            //close connection
+            this.CloseConnection();
+            if (this.OpenConnection() == true)
+            {
+                string query = "SELECT * FROM users";
+                if (B5 == 0 && Wijn >= 5)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `W5` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B10 == 0 && Wijn >= 10)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `W5` = '1' , `W10` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B25 == 0 && Wijn >= 25)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `W5` = '1' , `W10` = '1', `W25` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B50 == 0 && Wijn >= 50)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `W5` = '1' , `W10` = '1', `W25` = '1', `W50` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
+                cmd.ExecuteNonQuery();
+
+
+            }
         }
+            public void ControleerAchievementWodka()
+        {
+
+            //close connection
+            this.CloseConnection();
+            if (this.OpenConnection() == true)
+            {
+                string query = "SELECT * FROM users";
+                if (B5 == 0 && Wijn >= 5)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `WO5` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B10 == 0 && Wijn >= 10)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `WO5` = '1' , `WO10` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B25 == 0 && Wijn >= 25)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `WO5` = '1' , `WO10` = '1', `WO25` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B50 == 0 && Wijn >= 50)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `WO5` = '1' , `WO10` = '1', `WO25` = '1', `WO50` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
+                cmd.ExecuteNonQuery();
+
+
+            }
+        }
+        public void ControleerAchievementRum()
+        {
+
+            //close connection
+            this.CloseConnection();
+            if (this.OpenConnection() == true)
+            {
+                string query = "SELECT * FROM users";
+                if (B5 == 0 && Wijn >= 5)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `R5` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B10 == 0 && Wijn >= 10)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `R5` = '1' , `R10` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B25 == 0 && Wijn >= 25)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `R5` = '1' , `R10` = '1', `R25` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B50 == 0 && Wijn >= 50)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `R5` = '1' , `R10` = '1', `R25` = '1', `R50` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
+                cmd.ExecuteNonQuery();
+
+
+            }
+        }
+        public void ControleerAchievementTequila()
+        {
+
+            //close connection
+            this.CloseConnection();
+            if (this.OpenConnection() == true)
+            {
+                string query = "SELECT * FROM users";
+                if (B5 == 0 && Wijn >= 5)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `T5` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B10 == 0 && Wijn >= 10)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `T5` = '1' , `T10` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B25 == 0 && Wijn >= 25)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `T5` = '1' , `T10` = '1', `T25` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                if (B50 == 0 && Wijn >= 50)
+                {
+                    query = "UPDATE `dbi339814`.`users` SET `T5` = '1' , `T10` = '1', `T25` = '1', `T50` = '1' WHERE `users`.`UserID` = ?barcode;";
+                }
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
+                cmd.ExecuteNonQuery();
+
+
+            }
+        }
+    }
     } 
      
