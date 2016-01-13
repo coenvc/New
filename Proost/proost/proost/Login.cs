@@ -37,6 +37,7 @@ namespace proost
                 database.wwGebruiker = tbWachtwoord.Text;
                 Home hoofdpagina = new Home(); 
                 this.Hide();
+                hoofdpagina.SetDb(this.database);
                 hoofdpagina.Show();
 
             }
@@ -69,8 +70,9 @@ namespace proost
         private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             register RegistratieScherm = new register();
-            this.Hide();
-            RegistratieScherm.Show();
+            this.Hide(); 
+            RegistratieScherm.Show(); 
+            
         }
     }
 }

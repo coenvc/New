@@ -42,6 +42,7 @@
             this.BtnVodka = new System.Windows.Forms.Button();
             this.BtnBier = new System.Windows.Forms.Button();
             this.BtnWijn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumAantal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -206,12 +207,23 @@
             this.BtnWijn.UseVisualStyleBackColor = false;
             this.BtnWijn.Click += new System.EventHandler(this.BtnWijn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(198, 180);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // kassa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Kassa.Properties.Resources.Kassaclean_fw;
             this.ClientSize = new System.Drawing.Size(1484, 961);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnRum);
             this.Controls.Add(this.BtnTequila);
             this.Controls.Add(this.button6);
@@ -248,6 +260,7 @@
         private System.Windows.Forms.Button BtnVodka;
         private System.Windows.Forms.Button BtnBier;
         private System.Windows.Forms.Button BtnWijn;
+        private System.Windows.Forms.Button button1;
     }
 }
 

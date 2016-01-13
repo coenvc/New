@@ -12,8 +12,14 @@ namespace proost
 {
     public partial class WijnAchievement : Form
     {
-        public WijnAchievement()
+        DbConnection database; 
+        public void SetDb(DbConnection database)
         {
+            this.database = database;
+        }
+        public WijnAchievement()
+        { 
+           
             InitializeComponent();
             System.Windows.Forms.ToolTip ToolTipWijn5 = new System.Windows.Forms.ToolTip();
             System.Windows.Forms.ToolTip ToolTipWijn10 = new System.Windows.Forms.ToolTip();

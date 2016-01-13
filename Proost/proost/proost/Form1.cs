@@ -16,8 +16,8 @@ namespace proost
         public Form1()
         {
             InitializeComponent();
-            database.Select(); 
-            listBox1.DataSource = database.Select(); 
+             
+            
         }
     }
 }

@@ -12,6 +12,12 @@ namespace proost
 {
     public partial class WodkaAchievement : Form
     {
+        DbConnection database;
+        public void SetDb(DbConnection database)
+        {
+            this.database = database;
+        }
+
         public WodkaAchievement()
         {
              InitializeComponent(); 

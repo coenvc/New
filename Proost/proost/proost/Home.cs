@@ -12,10 +12,14 @@ namespace proost
 {
     public partial class Home : Form
     {
-       
+        DbConnection database;
         public Home()
         {
             InitializeComponent();
+        }
+        public void SetDb(DbConnection database)
+        {
+            this.database = database;
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -27,6 +31,7 @@ namespace proost
         {
            BierAchievement BierScherm = new BierAchievement();
            this.Hide();
+            BierScherm.SetDb(this.database);
            BierScherm.ShowDialog();  
                       
         }
@@ -35,6 +40,7 @@ namespace proost
         {
             WijnAchievement WijnScherm = new WijnAchievement();
           this.Hide();
+            WijnScherm.SetDb(this.database);
            WijnScherm.ShowDialog(); 
         }
 
@@ -42,6 +48,7 @@ namespace proost
         {
             TequilaAchievement TequilaScherm = new TequilaAchievement();
             this.Hide();
+            TequilaScherm.SetDb(this.database);
             TequilaScherm.ShowDialog();  
 
         }
@@ -50,6 +57,7 @@ namespace proost
         {
             WodkaAchievement WodkaScherm = new WodkaAchievement();
             this.Hide();
+            WodkaScherm.SetDb(this.database);
             WodkaScherm.ShowDialog(); 
         }
 
@@ -57,6 +65,7 @@ namespace proost
         {
             RumAchievement RumScherm = new RumAchievement();
             this.Hide();
+            RumScherm.SetDb(this.database);
             RumScherm.ShowDialog();
         }
 
@@ -68,7 +77,8 @@ namespace proost
         private void btnTerug_Click_1(object sender, EventArgs e)
         {
             Home HoofdScherm = new Home();
-            this.Hide();
+            this.Hide(); 
+            
             HoofdScherm.ShowDialog();
         }
     }
