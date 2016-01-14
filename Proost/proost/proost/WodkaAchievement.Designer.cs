@@ -44,7 +44,7 @@
             this.btnWodka50.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnWodka50.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnWodka50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWodka50.Image = ((System.Drawing.Image)(resources.GetObject("btnWodka50.Image")));
+            this.btnWodka50.Image = global::proost.Properties.Resources.Vodka50zw_fw;
             this.btnWodka50.Location = new System.Drawing.Point(195, 420);
             this.btnWodka50.Name = "btnWodka50";
             this.btnWodka50.Size = new System.Drawing.Size(93, 84);
@@ -59,7 +59,7 @@
             this.btnWodka25.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnWodka25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnWodka25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWodka25.Image = ((System.Drawing.Image)(resources.GetObject("btnWodka25.Image")));
+            this.btnWodka25.Image = global::proost.Properties.Resources.Vodka25zw_fw;
             this.btnWodka25.Location = new System.Drawing.Point(96, 420);
             this.btnWodka25.Name = "btnWodka25";
             this.btnWodka25.Size = new System.Drawing.Size(93, 89);
@@ -75,7 +75,7 @@
             this.btnWodka10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnWodka10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnWodka10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWodka10.Image = ((System.Drawing.Image)(resources.GetObject("btnWodka10.Image")));
+            this.btnWodka10.Image = global::proost.Properties.Resources.Vodka10zw_fw;
             this.btnWodka10.Location = new System.Drawing.Point(195, 325);
             this.btnWodka10.Name = "btnWodka10";
             this.btnWodka10.Size = new System.Drawing.Size(93, 84);
@@ -90,7 +90,7 @@
             this.btnWodka5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnWodka5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnWodka5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWodka5.Image = ((System.Drawing.Image)(resources.GetObject("btnWodka5.Image")));
+            this.btnWodka5.Image = global::proost.Properties.Resources.Vodka5zw1;
             this.btnWodka5.Location = new System.Drawing.Point(96, 325);
             this.btnWodka5.Name = "btnWodka5";
             this.btnWodka5.Size = new System.Drawing.Size(93, 84);

@@ -16,6 +16,29 @@ namespace proost
         public void SetDb(DbConnection database)
         {
             this.database = database;
+            database.Achievement();
+            database.ControleerAchievementWijn();
+            if (database.W5Behaald == true)
+            {
+                btnWijn5.Image = ((System.Drawing.Image)(Properties.Resources.Wijn5_fw));
+
+            }
+            if (database.W10Behaald == true)
+            {
+
+                btnWijn10.Image = ((System.Drawing.Image)(Properties.Resources.Wijn10_fw));
+
+            }
+            if (database.W25Behaald == true)
+            {
+
+                btnWijn25.Image = ((System.Drawing.Image)(Properties.Resources.Wijn25_fw));
+            }
+            if (database.W50Behaald == true)
+            {
+
+                btnWijn50.Image = ((System.Drawing.Image)(Properties.Resources.Wijn50_fw));
+            }
         }
         public WijnAchievement()
         { 

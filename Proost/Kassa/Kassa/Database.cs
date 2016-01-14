@@ -519,23 +519,26 @@ namespace Kassa
                 if (B5 == 0 && Bier >= 5)
                 {
                     query = "UPDATE `dbi339814`.`users` SET `B5` = '1' WHERE `users`.`UserID` = ?barcode;";
+                            
                 }
                 if (B10 == 0 && Bier >= 10)
                 {
                     query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1' WHERE `users`.`UserID` = ?barcode;";
+                    
                 }
                 if (B25 == 0 && Bier >= 25)
                 {
                     query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1', `B25` = '1' WHERE `users`.`UserID` = ?barcode;";
+                    
                 }
                 if (B50 == 0 && Bier >= 50)
                 {
                     query = "UPDATE `dbi339814`.`users` SET `B5` = '1' , `B10` = '1', `B25` = '1', `B50` = '1' WHERE `users`.`UserID` = ?barcode;";
+                   
                 }
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
                 cmd.ExecuteNonQuery();
-
 
             }
         }
@@ -628,7 +631,6 @@ namespace Kassa
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.Add("?barcode", MySqlDbType.Int32).Value = Barcode;
                 cmd.ExecuteNonQuery();
-
 
             }
         }

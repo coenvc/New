@@ -91,7 +91,7 @@
             this.btnBier5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnBier5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnBier5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBier5.Image = ((System.Drawing.Image)(resources.GetObject("btnBier5.Image")));
+            this.btnBier5.Image = global::proost.Properties.Resources.Bier10zw_fw;
             this.btnBier5.Location = new System.Drawing.Point(99, 340);
             this.btnBier5.Name = "btnBier5";
             this.btnBier5.Size = new System.Drawing.Size(93, 84);

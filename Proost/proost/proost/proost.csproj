@@ -127,6 +127,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="register.resx">
       <DependentUpon>register.cs</DependentUpon>
@@ -143,6 +144,7 @@
     <EmbeddedResource Include="WodkaAchievement.resx">
       <DependentUpon>WodkaAchievement.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Proost.config">
       <SubType>Designer</SubType>
     </None>
@@ -155,6 +157,72 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier5zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier10zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier25zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier50zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rum5zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rum10zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rum25zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rum50zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier5.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier10.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier25.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bier50.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka5zw.fw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka10zw.fw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka25zw.fw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka50zw.fw1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka5zw.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka10.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka25.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka50.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vodka5.fw.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
